@@ -1,19 +1,25 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { shape, string } from 'prop-types';
+import { Feather } from '@expo/vector-icons';
 
 const CircleButton = (props) => {
-  const { children, style } = props;
+  const { style, name } = props;
   return (
     <View style={[styles.circleButton, style]}>
-      <Text style={styles.circleButtonLabel}>{children}</Text>
+      <Feather
+        style={styles.circleButtonLabel}
+        name={name}
+        size={32}
+        color="white"
+      />
     </View>
   );
 };
 
 CircleButton.propTypes = {
-  children: string.isRequired,
   style: shape(),
+  name: string.isRequired,
 };
 
 CircleButton.defaultProps = {
@@ -26,6 +32,7 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
+    justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
     right: 40,
@@ -35,11 +42,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 8,
     elevation: 8,
-  },
-  circleButtonLabel: {
-    flex: 1,
-    color: '#ffffff',
-    fontSize: 40,
   },
 });
 
