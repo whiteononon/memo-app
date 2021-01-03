@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import {
+  StyleSheet, View, Text, TouchableOpacity,
+} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 const MemoList = () => (
@@ -9,9 +11,9 @@ const MemoList = () => (
         <Text style={styles.memoListItemTitle}>買い物リスト</Text>
         <Text style={styles.memoListItemDate}>2020年12月24日 10:00</Text>
       </View>
-      <View style={styles.memoListItemDeleteButton}>
+      <TouchableOpacity style={styles.memoListItemDeleteButton}>
         <Feather name="x" size={16} color="#b0b0b0" />
-      </View>
+      </TouchableOpacity>
     </View>
 
     <View style={styles.memoListItem}>
@@ -19,9 +21,9 @@ const MemoList = () => (
         <Text style={styles.memoListItemTitle}>買い物リスト</Text>
         <Text style={styles.memoListItemDate}>2020年12月24日 10:00</Text>
       </View>
-      <View style={styles.memoListItemDeleteButton}>
+      <TouchableOpacity style={styles.memoListItemDeleteButton}>
         <Feather name="x" size={16} color="#b0b0b0" />
-      </View>
+      </TouchableOpacity>
     </View>
 
     <View style={styles.memoListItem}>
@@ -29,9 +31,9 @@ const MemoList = () => (
         <Text style={styles.memoListItemTitle}>買い物リスト</Text>
         <Text style={styles.memoListItemDate}>2020年12月24日 10:00</Text>
       </View>
-      <View style={styles.memoListItemDeleteButton}>
+      <TouchableOpacity style={styles.memoListItemDeleteButton}>
         <Feather name="x" size={16} color="#b0b0b0" />
-      </View>
+      </TouchableOpacity>
     </View>
   </View>
 );

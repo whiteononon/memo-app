@@ -5,7 +5,7 @@ import AppBar from '../components/AppBar';
 import MemoList from '../components/MemoList';
 import CircleButton from '../components/CircleButton';
 
-const App = () => (
+const MemoListScreen = () => (
   <View style={styles.container}>
     <AppBar />
     <MemoList />
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default MemoListScreen;
