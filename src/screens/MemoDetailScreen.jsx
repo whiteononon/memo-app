@@ -2,27 +2,31 @@ import React from 'react';
 import {
   StyleSheet, View, Text, ScrollView,
 } from 'react-native';
-import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 
-const MemoDetailScreen = () => (
-  <View style={styles.container}>
-    <AppBar />
-    <View style={styles.memoHeader}>
-      <Text style={styles.memoTitle}>買い物リスト</Text>
-      <Text style={styles.memoDate}>2020年12月24日 10:00</Text>
+const MemoDetailScreen = (props) => {
+  const { navigation } = props;
+  return (
+    <View style={styles.container}>
+      <View style={styles.memoHeader}>
+        <Text style={styles.memoTitle}>買い物リスト</Text>
+        <Text style={styles.memoDate}>2020年12月24日 10:00</Text>
+      </View>
+      <ScrollView style={styles.memoBody}>
+        <Text style={styles.memoText}>
+          買い物リスト買い物リスト買い物リスト買い物リスト買い物リスト
+        </Text>
+      </ScrollView>
+      <CircleButton
+        style={{ top: 60, bottom: 'auto' }}
+        name="edit-2"
+        onPress={() => {
+          navigation.navigate('MemoEdit');
+        }}
+      />
     </View>
-    <ScrollView style={styles.memoBody}>
-      <Text style={styles.memoText}>
-        買い物リスト買い物リスト買い物リスト買い物リスト買い物リスト
-      </Text>
-    </ScrollView>
-    <CircleButton
-      style={{ top: 160, bottom: 'auto' }}
-      name="edit-2"
-    />
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
